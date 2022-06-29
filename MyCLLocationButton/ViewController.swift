@@ -16,6 +16,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        manager.delegate = self
         createButton()
     }
 
@@ -37,7 +38,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         self.manager.stopUpdatingLocation()
-        print(locations)
+        print(location)
         
     }
 
